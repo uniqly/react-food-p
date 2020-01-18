@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap'
 
 class FoodForm extends Component {
 	
 	render() {
 		return(
-			<Container>
-				<Row className="genderForm">
+			<div>
+				<div className="genderForm">
 					<form onSubmit = { this.props.handleNext }>
 						<label>
 						What is are you going to eat? <br/>
@@ -31,8 +30,8 @@ class FoodForm extends Component {
 						<br/>
 						<input type='submit'/>
 					</form>
-				</Row>
-			</Container>
+				</div>
+			</div>
 			)
 		}
 	}
