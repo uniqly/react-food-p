@@ -1,26 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import InputForm from './InputForm';
+import ResultForm from './ResultForm';
+
+
+class App extends Component {
+  inputElement = React.createRef()
+  constructor(props) {
+		super(props)
+		this.state = {
+      check: false,
+      age: '',
+      gender: '',
+      food: '',
+    }
+    
+
+    this.handleRetry = this.handleRetry.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleInput = this.handleInput.bind(this)
+	}
+
+	// mySubmitHandler = event => {
+	// 	ReactDOM.render(<ResultForm  Ages={this.state.age}/>,document.getElementById('data'))
+  // }
+
+  handleRetry = event => {
+    this.setState({check: false})
+  }
+
+  handleSubmit = event => {
+    this.setState({check: true})
+  }
+
+  handleInput = event => {
+    const target = event.target
+		const value = target.value
+		const name = target.name
+		this.setState({
+			[name]: value
+    })
+    //alert(this.state.age)
+  }
+
+  render() {
+    return (
+      <div className="App">
+        { this.state.check ? 
+          <ResultForm 
+            handleRetry = { this.handleRetry }
+            Info = { this.state }
+             /> :
+          <InputForm 
+            inputElement = { this.inputElement }
+            handleNext = { this.handleNext }
+            handleSubmit = { this.handleSubmit }
+            handleInput = { this.handleInput }
+          /> 
+        }
+      </div>
+    )
+  }
 }
 
 export default App;
