@@ -12,9 +12,10 @@
   color: silver;
 }
 
-input:focus{
+input:focus, select:focus{
   outline: none;
 }
+
 
 body {
   height: 100vh;
@@ -36,4 +37,16 @@ h1 {
 
 label, p {
   font-size: 30px;
+}
+
+/* Disable number spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
 }

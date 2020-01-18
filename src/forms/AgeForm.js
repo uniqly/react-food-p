@@ -8,16 +8,16 @@ class AgeForm extends Component {
 			<div className="App">
 				<div className="background">
 					<div className="banner lunch">
-						<div>Food Paradise</div>
+						<div>Healthify Me</div>
 					</div>
 					<div className="form ageForm">
 						<div>
 							<div className="statement">Let's get started.</div>
 							<div className="more">A key to healthy living is to watch your diet.</div>
 							<input 
-								className="ageBox"
+								className="appBox ageBox"
 								name="age"
-								type="text" 
+								type="number" 
 								autoComplete="off"
 								placeholder="What is your age?"						
 								ref={ this.props.inputElement }

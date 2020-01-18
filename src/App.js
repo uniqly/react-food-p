@@ -12,9 +12,11 @@ class App extends Component {
 		super(props)
 		this.state = {
       check: false,
-      age: '',
-      gender: '',
-      food: '',
+      age: '16',
+      gender: 'Male',
+      food: '0',
+      snack: '0',
+      drink: '0',
     }
     
 
@@ -28,7 +30,14 @@ class App extends Component {
   // }
 
   handleRetry = event => {
-    this.setState({check: false})
+    this.setState({
+      check: false,
+      age: '16',
+      gender: 'Male',
+      food: '0',
+      snack: '0',
+      drink: '0',
+    })
   }
 
   handleSubmit = event => {

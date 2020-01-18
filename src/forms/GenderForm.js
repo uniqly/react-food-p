@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Form.css';
 
 class GenderForm extends Component {
 	

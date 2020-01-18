@@ -102,6 +102,16 @@ input[type=radio]:checked + label>div{
     height: 25%;
 }
 
+.foodForm {
+    top: 5%;
+    height: 90%;
+}
+
+.resultForm {
+    top: 5%;
+    height: 90%;
+}
+
 .statement {
     font-size: 1.75rem;
     padding-top: 1rem;
@@ -109,26 +119,33 @@ input[type=radio]:checked + label>div{
 }
 
 .more {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding-top: 0.5rem;
     padding-left: 2rem;
     font-weight: bold;
     color: darkolivegreen;
 }
 
-.ageBox {
+.appBox {
     position: relative;
     font-family: 'CuprumBold';
     font-size: 1rem;
-    color: silver;
+    color: darkolivegreen;
     background: white;
     padding-left: 1rem;
     border: 0;
-    top: 3rem;
-    left: 16%;
     height: 2.25rem;
     width: 60%;
+    left: 16%;
     box-shadow: 0.25rem 0.25rem 0 darkolivegreen;
+}
+
+.ageBox {
+    top: 3rem;
+}
+
+.foodBox {
+    top: 18vh;
 }
 
 .appBtn {
