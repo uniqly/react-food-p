@@ -20,8 +20,8 @@ class GenderForm extends Component {
 							value="Male"
 							onClick={ this.props.handleInput } 
 						/>
-						<label className="boy" for="boy">
-							<div><div>Male</div></div>
+						<label className="picture boy" for="boy">
+							<div >Male</div>
 						</label>
 						<input 
 							name="gender"
@@ -31,8 +31,8 @@ class GenderForm extends Component {
 							value="Female"
 							onClick={ this.props.handleInput } 
 						/>
-						<label className="girl" for="girl">
-							<div><div>Female</div></div>
+						<label className="picture girl" for="girl">
+							<div>Female</div>
 						</label>
 					</div>
 				</div>

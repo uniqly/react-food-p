@@ -10,7 +10,8 @@ class DrinkForm extends Component {
 					<div className="form foodForm">
 						<div className="statement">What are you drinking?</div>
 						<div className="more">I'm thirsty for...</div>
-						<select className="appBox foodBox" name="drink" onChange={ this.props.handleInput }>
+						<select className="appBox foodBox" name="drink" onChange={ this.props.handleInput } required>
+							<option value="" disabled selected>Select Drink</option>
 							<option value="0">I'm not thirsty</option>
 							<option value="0">Water</option>
 							<option value="68">Meiji Milk</option>

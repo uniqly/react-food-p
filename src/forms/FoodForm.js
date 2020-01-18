@@ -10,7 +10,8 @@ class FoodForm extends Component {
 					<div className="form foodForm">
 						<div className="statement">What are you eating?</div>
 						<div className="more">I want to eat...</div>
-						<select className="appBox foodBox" name="food" onChange={ this.props.handleInput }>
+						<select className="appBox foodBox" name="food" onChange={ this.props.handleInput } required>
+							<option value="" disabled selected>Select Food</option>
 							<option value="0">I'm not hungry</option>
 							<option value="370">Fishball Noodle (Dry)</option>
 							<option value="411">Wanton Noodle</option>

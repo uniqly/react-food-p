@@ -16,6 +16,17 @@ input:focus, select:focus{
   outline: none;
 }
 
+select:required:invalid {
+  color: silver;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: darkolivegreen;
+}
 
 body {
   height: 100vh;
@@ -23,6 +34,11 @@ body {
   background-size: cover;
   color: black;
   font-family: 'CuprumBold'
+}
+
+span {
+  display: inline-block;
+  margin-right: 0.125em;
 }
 
 #root, .App{
@@ -35,6 +51,14 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  color: black;
+}
 label, p {
   font-size: 30px;
 }
