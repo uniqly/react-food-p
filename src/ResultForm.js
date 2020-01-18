@@ -43,7 +43,7 @@ class ResultForm extends Component {
               Your drink contains { drinkCal } calories.<br/>
               Overall you have consumed { totalCal } calories.<br/>
               Your daily recommanded calorie intake based on your age and gender is { kcal } calories.<br/>
-              Your suggested calorie intake for this meal is { Math.round(kcal/2)}
+              Your suggested calorie intake for this meal is { Math.round(kcal/3) }
             </div>
           </div>
         </div>
