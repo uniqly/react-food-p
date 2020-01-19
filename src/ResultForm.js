@@ -29,9 +29,9 @@ class ResultForm extends Component {
     if (diff/total <= 0.25) {
       return <h2>Great job! You're within 25% of your daily recommended intake.</h2>
     } else if (total > daily) {
-      return <h2>Oh no! Your caloric intake is more than 25% of your daily recommended intake.</h2>
+      return <h2>Oh no! Your caloric intake is 25% above your daily recommended intake.</h2>
     } else {
-      return <h2>Oh no! Your caloric intake is less than 25% of your daily recommended intake.</h2>
+      return <h2>Oh no! Your caloric intake is 25% below your daily recommended intake.</h2>
     }
   }
 

@@ -58,6 +58,7 @@ h2 {
   padding-left: 2rem;
   padding-right: 1rem;
   color: black;
+  text-align: justify;
 }
 label, p {
   font-size: 30px;
