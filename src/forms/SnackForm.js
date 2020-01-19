@@ -33,8 +33,8 @@ class SnackForm extends Component {
 					<div className="form foodForm">
 						<div className="statement">Are you hungry for more?</div>
 						<div className="more">I'm craving for...</div>
-						<select className="appBox foodBox" name="snack" onChange={ this.changeInput } required>
-							<option value="none" disabled selected hidden>Select Snack</option>
+						<select className="appBox foodBox" name="snack" onChange={ this.changeInput } defaultValue={ "none" }>
+							<option value="none" disabled hidden>Select Snack</option>
 							<option value="0">I don't need a snack</option>
 							<option value="110">Hello Panda</option>
 							<option value="240">Potato Chips</option>

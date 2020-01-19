@@ -19,7 +19,7 @@ class AgeForm extends Component {
 		console.log(typeof item)
 		console.log(item)
 
-		if (item > 0 && item <= 100 && Number.isInteger(item)) {
+		if (item >= 12 && item <= 20 && Number.isInteger(item)) {
 			this.props.handleInput(name, item)
 			this.setState({checkValid: true})
 		} else {
