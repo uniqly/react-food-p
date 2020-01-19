@@ -6,30 +6,35 @@ class ResultForm extends Component {
   calcCalorie(age, gender) {
     var cal = 2000;
     if (gender === 'Male') {
-      cal += 200;
-      if (age <= 13) {
-        cal = 2000;
-      } else if (age >= 16) {
-        return 2800;
-      } else {
-        cal += 200*(age-13);
-      }
+      if (age > 65) {
+        cal = 2200
+      } else if (age > 45) {
+        cal = 2400
+      } else if (age > 16) {
+        cal = 2800
+      } 
     } else {
-      if (age >= 19) {
-        cal = 2200;
-      }
+      if (age > 50) {
+        cal = 1800
+      } else if (age > 25) {
+        cal = 2000
+      } else if (age > 18) {
+        cal = 2200
+      } 
     }
     return cal
     }
 
   checkDaily(total, daily) {
     const diff = Math.abs(daily-total);
-    if (diff/total <= 0.25) {
-      return <h2>Great job! You're within 25% of your daily recommended intake.</h2>
-    } else if (total > daily) {
-      return <h2>Oh no! Your caloric intake is 25% above your daily recommended intake.</h2>
+    if (total < daily && diff/total <= 0.3) {
+      return <h2>Great Job! You're eating healthily!</h2>
+    } else if (total > daily && diff/total <= 0.2) {
+      return <h2>Keep it up! Your caloric intake is within 25% of your daily recommended intake.</h2>
+    } else if (total < daily && diff/total > 0.3) {
+      return <h2>Oh no! You need to eat more.</h2>
     } else {
-      return <h2>Oh no! Your caloric intake is 25% below your daily recommended intake.</h2>
+      return <h2>Oh no! You're eating way above your daily recommanded intake.</h2>
     }
   }
 

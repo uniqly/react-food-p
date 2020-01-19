@@ -198,7 +198,7 @@ span div {
     text-align: right;
     color: crimson;
     width: auto;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 }
 
 .textIs {
@@ -214,15 +214,6 @@ span div {
     color: black;
 }
 
-.kcalBox {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin-left: 2rem;
-    margin-right: 1rem;
-}
-
 .kcalSpan {
     height: 3.5rem;
     font-size: 3.5rem;
@@ -233,13 +224,14 @@ span div {
 .maleImg {
     height: 3.5rem;
     width: auto;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 }
 
 .femaleImg {
     height: 3.5rem;
     width: auto;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .appBtn {
