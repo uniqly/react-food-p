@@ -56,14 +56,14 @@ class ResultForm extends Component {
             <div className="statement">Results</div>
             { message }
             <div className="more flex-cetner">
-              <span className="textIs">Your daily recommended calorie for this meal is</span>
+              <span className="textIs">Your daily recommended calorie intake is</span>
               <div className="flex-bottom">
                 <span className="kcalSpan">{ Math.round(daily) }</span>
                 <span className="kcal">kcal</span>
               </div>
             </div>
             <div className="more flex-cetner">
-              <span className="textIs">Your meal contained</span>
+              <span className="textIs">Overall your meal contains</span>
               <div className="flex-bottom">
                 <span className="kcalSpan">{ totalCal }</span>
                 <span className="kcal">kcal</span>
