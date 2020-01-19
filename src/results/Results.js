@@ -56,7 +56,7 @@ class ResultForm extends Component {
             <div className="statement">Results</div>
             { message }
             <div className="more flex-cetner">
-              <span className="textIs">Your daily recommended calorie intake is</span>
+              <span className="textIs">Your daily recommended calorie intake for a meal is</span>
               <div className="flex-bottom">
                 <span className="kcalSpan">{ Math.round(daily) }</span>
                 <span className="kcal">kcal</span>
