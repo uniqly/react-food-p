@@ -67,7 +67,7 @@ class ResultForm extends Component {
           </div>
         </div>
         <div className="bottom">
-          <button type="button" className="appBtn BackBtn" onClick={ this.props.handleBack }>Back</button>
+          <button type="button" className="appBtn backBtn" onClick={ this.props.handleBack }>Back</button>
           <button type="button" className="appBtn nextBtn" onClick={ this.props.handleRetry }>Retry</button>
         </div>
       </div>

@@ -295,6 +295,14 @@ span div {
     .bottom {
         width: 100%;
     }
+
+    .backBtn {
+        left: 0.5rem;
+    }
+
+    .nextBtn {
+        right: 0.5rem;
+    }
 }
 
 @media only screen and (max-width: 700px) {
