@@ -2,7 +2,27 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class GenderForm extends Component {
-	
+	constructor(props) {
+		super(props)
+		this.state = {
+			checkValid: false,
+		}
+
+		this.changeInput = this.changeInput.bind(this)
+	}
+
+	changeInput(e) {
+		const target = e.target
+		const name = target.name
+		const item = target.value
+
+		console.log(typeof item)
+		console.log(item)
+
+		this.props.handleInput(name, item)
+		this.setState({checkValid: true})
+	}
+
 	render() {
 		return(
 			<div className="App">
@@ -18,9 +38,9 @@ class GenderForm extends Component {
 							type="radio" 					
 							ref={ this.props.inputElement }
 							value="Male"
-							onClick={ this.props.handleInput } 
+							onClick={ this.changeInput } 
 						/>
-						<label className="picture boy" for="boy">
+						<label className="picture boy" htmlFor="boy">
 							<div >Male</div>
 						</label>
 						<input 
@@ -29,47 +49,26 @@ class GenderForm extends Component {
 							type="radio" 					
 							ref={ this.props.inputElement }
 							value="Female"
-							onClick={ this.props.handleInput } 
+							onClick={ this.changeInput } 
 						/>
-						<label className="picture girl" for="girl">
+						<label className="picture girl" htmlFor="girl">
 							<div>Female</div>
 						</label>
 					</div>
 				</div>
 				<div className="bottom">
-					<button type="button" class="appBtn backBtn" onClick={ this.props.handleBack }>Back</button>
-					<button type="button" class="appBtn nextBtn" onClick={ this.props.handleNext }>Next</button>
+					<button type="button" className="appBtn backBtn" onClick={ this.props.handleBack }>Back</button>
+					<button 
+						type="button" 
+						className="appBtn nextBtn" 
+						onClick={ this.props.handleNext }
+						disabled={ !this.state.checkValid }>
+						Next
+					</button>
 				</div>
 			</div>
-			// <Container>
-			// 	<Row className="genderForm">
-			// 		<form onSubmit = { this.props.handleNext }>
-			// 			<label>
-			// 			What is your gender? <br/>
-			// 			<input 
-            //                 name="gender"
-            //                 className="opt1"
-			// 				type="radio" 					
-			// 				ref={ this.props.inputElement }
-			// 				value="Male"
-			// 				onClick={ this.props.handleInput } 
-            //             />Male
-            //             <input 
-            //                 name="gender"
-            //                 className="opt2"
-			// 				type="radio" 					
-			// 				ref={ this.props.inputElement }
-			// 				value="Female"
-			// 				onClick={ this.props.handleInput } 
-            //             />Female
-			// 			</label>
-			// 			<br/>
-			// 			<input type='submit'/>
-			// 		</form>
-			// 	</Row>
-			// </Container>
-			)
-		}
+		)
 	}
+}
 
 export default GenderForm

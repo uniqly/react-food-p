@@ -235,6 +235,11 @@
     transform: translate(0.25rem,0.25rem);
 }
 
+.appBtn:disabled {
+    cursor: not-allowed;
+    filter: grayscale(1.0)
+}
+
 .nextBtn {
     position: relative;
     float: right;   

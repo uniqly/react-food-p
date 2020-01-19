@@ -37,9 +37,9 @@ class ResultForm extends Component {
 
   checkSex(gender) {
     if (gender === "Male"){
-      return <img className="maleImg" src={ maleImg }/>
+      return <img className="maleImg" src={ maleImg } alt="male.png"/>
     } else {
-      return <img className="femaleImg" src={ femaleImg }/>
+      return <img className="femaleImg" src={ femaleImg } alt="female.png"/>
     }
   }
 
@@ -85,7 +85,7 @@ class ResultForm extends Component {
           </div>
         </div>
         <div className="bottom">
-          <button type="button" class="appBtn nextBtn" onClick={ this.props.handleRetry }>Retry</button>
+          <button type="button" className="appBtn nextBtn" onClick={ this.props.handleRetry }>Retry</button>
         </div>
       </div>
     )

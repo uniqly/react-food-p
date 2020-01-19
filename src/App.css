@@ -8,16 +8,16 @@
   src: local('CuprumBold'), url(./fonts/Cuprum-Bold.ttf) format('truetype');
 }
 
+html {
+  font-size: 16px;
+}
+
 ::placeholder{
   color: silver;
 }
 
 input:focus, select:focus{
   outline: none;
-}
-
-select:required:invalid {
-  color: silver;
 }
 
 option[value=""][disabled] {

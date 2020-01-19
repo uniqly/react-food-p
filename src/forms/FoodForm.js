@@ -2,6 +2,29 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class FoodForm extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			checkValid: false,
+		}
+
+		this.changeInput = this.changeInput.bind(this)
+	}
+
+	changeInput(e) {
+		const target = e.target
+		const name = target.name
+		const item = target.value
+
+		console.log(typeof item)
+		console.log(item)
+		if (item !== "none") {
+			this.props.handleInput(name, item)
+			this.setState({checkValid: true})
+		} else {
+			this.setState({checkValid: false})
+		}
+	}
 
 	render() {
 		return(
@@ -10,8 +33,8 @@ class FoodForm extends Component {
 					<div className="form foodForm">
 						<div className="statement">What are you eating?</div>
 						<div className="more">I want to eat...</div>
-						<select className="appBox foodBox" name="food" onChange={ this.props.handleInput } required>
-							<option value="" disabled selected>Select Food</option>
+						<select className="appBox foodBox" name="food" onChange={ this.changeInput } required>
+							<option value="none" disabled selected hidden>Select Food</option>
 							<option value="0">I'm not hungry</option>
 							<option value="370">Fishball Noodle (Dry)</option>
 							<option value="411">Wanton Noodle</option>
@@ -26,7 +49,7 @@ class FoodForm extends Component {
 							<option value="504">Spaghetti Bolognese</option>
 							<option value="460">Carbonara</option>
 							<option value="681">Fish and Chips</option>
-							<option value="486">Agli Olio</option>
+							<option value="486">Aglio Olio</option>
 							<option value="555">Mee Rebus</option>
 							<option value="520">Mee Siam</option>
 							<option value="520">Mee Soto</option>
@@ -54,8 +77,14 @@ class FoodForm extends Component {
 					</div>
 				</div>
 				<div className="bottom">
-					<button type="button" class="appBtn backBtn" onClick={ this.props.handleBack }>Back</button>
-					<button type="button" class="appBtn nextBtn" onClick={ this.props.handleNext }>Next</button>
+					<button type="button" className="appBtn backBtn" onClick={ this.props.handleBack }>Back</button>
+					<button 
+						type="button" 
+						className="appBtn nextBtn" 
+						onClick={ this.props.handleNext }
+						disabled={ !this.state.checkValid }>
+						Next
+					</button>
 				</div>
 			</div>
 			)

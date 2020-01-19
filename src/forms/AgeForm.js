@@ -2,7 +2,31 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class AgeForm extends Component {
-	
+	constructor(props) {
+		super(props)
+		this.state = {
+			checkValid: false,
+		}
+
+		this.changeInput = this.changeInput.bind(this)
+	}
+
+	changeInput(e) {
+		const target = e.target
+		const name = target.name
+		const item = Number(target.value)
+
+		console.log(typeof item)
+		console.log(item)
+
+		if (item > 0 && item <= 100 && Number.isInteger(item)) {
+			this.props.handleInput(name, item)
+			this.setState({checkValid: true})
+		} else {
+			this.setState({checkValid: false})
+		}
+	}
+
 	render() {
 		return(
 			<div className="App">
@@ -19,16 +43,23 @@ class AgeForm extends Component {
 								name="age"
 								type="number" 
 								autoComplete="off"
-								placeholder="What is your age?"						
+								placeholder="What is your age?"		
+								pattern="\d*"				
 								ref={ this.props.inputElement }
 								value={ this.props.currentElement }
-								onChange={ this.props.handleInput }
+								onChange={ this.changeInput }
 							/>
 						</div>
 					</div>
 				</div>
 				<div className="bottom">
-					<button type="button" class="appBtn nextBtn" onClick={ this.props.handleNext }>Next</button>
+					<button 
+						type="button" 
+						className="appBtn nextBtn" 
+						onClick={ this.props.handleNext }
+						disabled={ !this.state.checkValid }>
+						Next
+					</button>
 				</div>
 			</div>
 			)

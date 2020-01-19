@@ -13,6 +13,7 @@ class InputForm extends Component {
 		}
 
 		this.handleNext = this.handleNext.bind(this)
+		this.handleBack = this.handleBack.bind(this)
 	}
 
 	handleNext = event => {

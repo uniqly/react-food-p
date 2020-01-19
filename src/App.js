@@ -43,12 +43,9 @@ class App extends Component {
     this.setState({check: true})
   }
 
-  handleInput = event => {
-    const target = event.target
-		const value = target.value
-		const name = target.name
+  handleInput(name, item) {
 		this.setState({
-			[name]: value
+			[name]: item
     })
     //alert(this.state.age)
   }

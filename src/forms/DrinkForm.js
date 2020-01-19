@@ -2,6 +2,29 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class DrinkForm extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			checkValid: false,
+		}
+
+		this.changeInput = this.changeInput.bind(this)
+	}
+
+	changeInput(e) {
+		const target = e.target
+		const name = target.name
+		const item = target.value
+
+		console.log(typeof item)
+		console.log(item)
+		if (item !== "none") {
+			this.props.handleInput(name, item)
+			this.setState({checkValid: true})
+		} else {
+			this.setState({checkValid: false})
+		}
+	}
 
 	render() {
 		return(
@@ -10,8 +33,8 @@ class DrinkForm extends Component {
 					<div className="form foodForm">
 						<div className="statement">What are you drinking?</div>
 						<div className="more">I'm thirsty for...</div>
-						<select className="appBox foodBox" name="drink" onChange={ this.props.handleInput } required>
-							<option value="" disabled selected>Select Drink</option>
+						<select className="appBox foodBox" name="drink" onChange={ this.changeInput } required>
+							<option value="none" disabled selected hidden>Select Drink</option>
 							<option value="0">I'm not thirsty</option>
 							<option value="0">Water</option>
 							<option value="68">Meiji Milk</option>
@@ -23,8 +46,14 @@ class DrinkForm extends Component {
 					</div>
 				</div>
 				<div className="bottom">
-					<button type="button" class="appBtn backBtn" onClick={ this.props.handleBack }>Back</button>
-					<button type="button" class="appBtn nextBtn" onClick={ this.props.handleNext }>Next</button>
+					<button type="button" className="appBtn backBtn" onClick={ this.props.handleBack }>Back</button>
+					<button 
+						type="button" 
+						className="appBtn nextBtn" 
+						onClick={ this.props.handleNext }
+						disabled={ !this.state.checkValid }>
+						Next
+					</button>
 				</div>
 			</div>
 			)
