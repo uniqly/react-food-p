@@ -29,12 +29,12 @@ class ResultForm extends Component {
     const diff = Math.abs(daily-total);
     if (total < daily && diff/total <= 0.3) {
       return <h2>Great Job! You're eating healthily!</h2>
-    } else if (total > daily && diff/total <= 0.2) {
+    } else if (total > daily && diff/total <= 0.25) {
       return <h2>Keep it up! Your caloric intake is within 25% of your daily recommended intake.</h2>
     } else if (total < daily && diff/total > 0.3) {
-      return <h2>Oh no! You need to eat more.</h2>
+      return <h2>Oh no! You're eating way below your daily recommended intake.</h2>
     } else {
-      return <h2>Oh no! You're eating way above your daily recommanded intake.</h2>
+      return <h2>Oh no! You're eating way above your daily recommended intake.</h2>
     }
   }
 
